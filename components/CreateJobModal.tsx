@@ -223,7 +223,7 @@ export const CreateJobModal = ({
                     leftSection="₹"
                     placeholder="0"
                     min={0}
-                    {...register("salarymin", { valueAsNumber: true })}
+                    // {...register("salarymin", { valueAsNumber: true })}
                     error={errors.salarymin?.message}
                     radius="md"
                     size="md"
@@ -253,7 +253,7 @@ export const CreateJobModal = ({
                     leftSection="₹"
                     placeholder="12,00,000"
                     min={0}
-                    {...register("salarymax", { valueAsNumber: true })}
+                    // {...register("salarymax", { valueAsNumber: true })}
                     error={errors.salarymax?.message}
                     radius="md"
                     size="md"
