@@ -10,6 +10,7 @@ import { useJobs } from '../hooks/useJobs';
 import '@mantine/core/styles.css';
 import '@mantine/dates/styles.css';
 import '@mantine/notifications/styles.css';
+import '../app/globals.css';
 
 export default function Home() {
   const [createJobModalOpened, setCreateJobModalOpened] = useState(false);
@@ -25,6 +26,7 @@ export default function Home() {
 
   return (
     <MantineProvider>
+      <body className="font-sans">
       <Notifications />
       <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
         <Header
@@ -39,6 +41,7 @@ export default function Home() {
           onJobCreated={handleJobCreated}
         />
       </div>
+      </body>
     </MantineProvider>
   );
 }
