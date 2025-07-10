@@ -1,9 +1,7 @@
 import { Job, CreateJobData } from "../types/job";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
-
 export async function fetchJobs(): Promise<Job[]> {
-  const res = await fetch(`${API_BASE_URL}/jobs`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/jobs`);
   if (!res.ok) throw new Error("Failed to fetch jobs");
   const jobs = await res.json();
   // Convert date strings to Date objects
