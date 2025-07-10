@@ -38,7 +38,7 @@ export async function createJob(data: CreateJobData): Promise<Job> {
     benefits: [],
     isremote: data.location === "Remote",
   };
-  const res = await fetch(`${API_BASE_URL}/jobs`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/jobs`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
