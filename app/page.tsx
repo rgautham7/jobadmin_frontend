@@ -26,7 +26,6 @@ export default function Home() {
 
   return (
     <MantineProvider>
-      <body className="font-sans">
       <Notifications />
       <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
         <Header
@@ -41,7 +40,6 @@ export default function Home() {
           onJobCreated={handleJobCreated}
         />
       </div>
-      </body>
     </MantineProvider>
   );
 }
