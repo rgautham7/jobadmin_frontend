@@ -1,7 +1,7 @@
 import { Job, CreateJobData } from "../types/job";
 
 export async function fetchJobs(): Promise<Job[]> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/jobs`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`);
   if (!res.ok) throw new Error("Failed to fetch jobs");
   const jobs = await res.json();
   // Convert date strings to Date objects
@@ -38,7 +38,7 @@ export async function createJob(data: CreateJobData): Promise<Job> {
     benefits: [],
     isremote: data.location === "Remote",
   };
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/jobs`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
