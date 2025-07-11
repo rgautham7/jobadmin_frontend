@@ -115,7 +115,23 @@ export const SearchFilter = ({
               min={0}
               max={200}
               step={1}
-              className={styles.salaryRangeSlider}
+              styles={{
+                thumb: {
+                  backgroundColor: "#fff",
+                  border: "7px solid #000",
+                  width: 20,
+                  height: 20,
+                  boxShadow: "none",
+                },
+                track: {
+                  backgroundColor: "#000",
+                  height: 2,
+                },
+                bar: {
+                  backgroundColor: "#000",
+                  height: 2,
+                },
+              }}
             />
           </Box>
         </Group>
