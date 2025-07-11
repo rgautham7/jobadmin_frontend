@@ -44,3 +44,40 @@
     height: 40px;
     margin: 0 16px;
   }
+
+.salaryHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.salaryHeaderLabel {
+  font-size: 15px;
+  font-weight: 500;
+  color: #666;
+}
+
+.salaryHeaderValue {
+  font-size: 15px;
+  color: #666;
+  font-weight: 500;
+}
+
+.salaryRangeSlider .mantine-RangeSlider-thumb {
+  background-color: #fff;
+  border: 7px solid #000;
+  width: 20px;
+  height: 20px;
+  box-shadow: none;
+}
+
+.salaryRangeSlider .mantine-RangeSlider-track {
+  background-color: #000;
+  height: 2px;
+}
+
+.salaryRangeSlider .mantine-RangeSlider-bar {
+  background-color: #000;
+  height: 2px;
+}

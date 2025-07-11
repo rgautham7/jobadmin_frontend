@@ -103,40 +103,19 @@ export const SearchFilter = ({
 
           {/* Salary Range Slider */}
           <Box className={styles.salaryBox}>
-            <Text size="sm" fw={500} mb={8} c="#666">
-              Salary Per Month
-            </Text>
-            <Group justify="space-between" mb={8}>
-              <Text size="sm" c="dimmed">
-                ₹{sliderValue[0]}k
-              </Text>
-              <Text size="sm" c="dimmed">
-                ₹{sliderValue[1]}k
-              </Text>
-            </Group>
+            <div className={styles.salaryHeaderRow}>
+              <span className={styles.salaryHeaderLabel}>Salary Per Month</span>
+              <span className={styles.salaryHeaderValue}>
+                ₹{sliderValue[0]}k - ₹{sliderValue[1]}k
+              </span>
+            </div>
             <RangeSlider
               value={sliderValue}
               onChange={handleSalaryRangeChange}
               min={0}
               max={200}
               step={1}
-              styles={{
-                thumb: {
-                  backgroundColor: "#fff",
-                  border: "7px solid #000",
-                  width: 20,
-                  height: 20,
-                  boxShadow: "none",
-                },
-                track: {
-                  backgroundColor: "#000",
-                  height: 2,
-                },
-                bar: {
-                  backgroundColor: "#000",
-                  height: 2,
-                },
-              }}
+              className={styles.salaryRangeSlider}
             />
           </Box>
         </Group>
