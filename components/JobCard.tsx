@@ -89,9 +89,20 @@ export const JobCard = ({ job }: JobCardProps) => {
             size="md"
             radius="md"
             style={{
-              backgroundColor: "#e3f2fd",
+              backgroundColor: "#b3daff",
               fontWeight: 500,
-              fontSize: 15,
+              fontSize: 32,
+              borderRadius: 16,
+              padding: "12px 32px",
+              minWidth: 0,
+              height: "auto",
+              lineHeight: 1,
+              color: "#000",
+              boxShadow: "none",
+              letterSpacing: 0,
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             {formatTimeAgo(job.postedat)}
