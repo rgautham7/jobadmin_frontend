@@ -8,6 +8,7 @@ import {
   Text,
   RangeSlider,
   Container,
+  Divider,
 } from "@mantine/core";
 import { IconSearch, IconMapPin, IconBriefcase } from "@tabler/icons-react";
 import { JobFilter } from "../types/job";
@@ -49,10 +50,14 @@ export const SearchFilter = ({
 
   return (
     <Box
-      style={{ backgroundColor: "#f8f9fa", borderBottom: "1px solid #e9ecef" }}
+      style={{
+        backgroundColor: "#f8f9fa",
+        borderBottom: "1px solid #e9ecef",
+        padding: "0 0 8px 0",
+      }}
     >
-      <Container size="xl" px="xl" py="lg">
-        <Group justify="space-between" align="center" w="100%">
+      <Container size="xl" px="xl" py={0}>
+        <Group justify="space-between" align="center" w="100%" gap={0}>
           {/* Search Input */}
           <TextInput
             placeholder="Search By Job Title, Role"
@@ -60,20 +65,23 @@ export const SearchFilter = ({
             value={filters.search}
             onChange={(e) => handleSearchChange(e.target.value)}
             styles={{
-              root: { width: 350 },
+              root: { width: 300 },
               input: {
                 border: "none",
                 backgroundColor: "white",
-                borderRadius: 6,
-                fontSize: 14,
+                borderRadius: 8,
+                fontSize: 15,
                 height: 44,
                 paddingLeft: 40,
+                boxShadow: "0 1px 4px 0 rgba(44, 62, 80, 0.04)",
               },
             }}
           />
 
+          <Divider orientation="vertical" size="sm" style={{ height: 40, margin: "0 16px" }} />
+
           {/* Location and Job Type Selects */}
-          <Group gap="md">
+          <Group gap={0}>
             <Select
               placeholder="Preferred Location"
               leftSection={<IconMapPin size={20} />}
@@ -89,16 +97,19 @@ export const SearchFilter = ({
                 { value: "Bangalore", label: "Bangalore" },
               ]}
               styles={{
-                root: { width: 200 },
+                root: { width: 180 },
                 input: {
                   border: "none",
                   backgroundColor: "white",
-                  borderRadius: 6,
+                  borderRadius: 8,
                   height: 44,
                   paddingLeft: 40,
+                  fontSize: 15,
+                  boxShadow: "0 1px 4px 0 rgba(44, 62, 80, 0.04)",
                 },
               }}
             />
+            <Divider orientation="vertical" size="sm" style={{ height: 40, margin: "0 16px" }} />
             <Select
               placeholder="Job type"
               leftSection={<IconBriefcase size={20} />}
@@ -112,20 +123,24 @@ export const SearchFilter = ({
                 { value: "Freelance", label: "Freelance" },
               ]}
               styles={{
-                root: { width: 180 },
+                root: { width: 150 },
                 input: {
                   border: "none",
                   backgroundColor: "white",
-                  borderRadius: 6,
+                  borderRadius: 8,
                   height: 44,
                   paddingLeft: 40,
+                  fontSize: 15,
+                  boxShadow: "0 1px 4px 0 rgba(44, 62, 80, 0.04)",
                 },
               }}
             />
           </Group>
 
+          <Divider orientation="vertical" size="sm" style={{ height: 40, margin: "0 16px" }} />
+
           {/* Salary Range Slider */}
-          <Box style={{ width: 280 }}>
+          <Box style={{ width: 260 }}>
             <Text size="sm" fw={500} mb={8} c="#666">
               Salary Per Month
             </Text>

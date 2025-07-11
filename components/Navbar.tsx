@@ -25,21 +25,22 @@ export const Navbar = ({ onCreateJob }: NavbarProps) => {
         display: 'flex',
         justifyContent: 'center',
         width: '100%',
+        background: 'transparent',
+        marginTop: 24,
+        marginBottom: 8,
       }}
     >
       <Box
         style={{
           background: 'white',
           boxShadow: '0 4px 24px 0 rgba(34, 34, 87, 0.08)',
-          borderRadius: '9999px',
-          padding: '1rem 2.5rem',
+          borderRadius: 32,
+          padding: '12px 36px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           width: '100%',
-          maxWidth: '56rem', // max-w-4xl
-          marginTop: '1.5rem',
-          marginBottom: '1rem',
+          maxWidth: 1100,
         }}
       >
         {/* Logo */}
@@ -52,27 +53,27 @@ export const Navbar = ({ onCreateJob }: NavbarProps) => {
             style={{
               width: 40,
               height: 40,
-              borderRadius: '0.5rem',
+              borderRadius: 12,
               objectFit: 'cover',
+              marginRight: 12,
             }}
           />
         </Box>
 
         {/* Navigation */}
-        <Group gap={32} style={{ marginLeft: '2rem', marginRight: '2rem' }}>
+        <Group gap={32} style={{ marginLeft: 32, marginRight: 32 }}>
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
               style={{
-                color: '#4B5563', // text-gray-700
+                color: active === item.label ? '#7C3AED' : '#4B5563',
                 fontWeight: 500,
-                fontSize: '1rem',
+                fontSize: 17,
                 transition: 'color 0.2s',
                 textDecoration: 'none',
-                ...(active === item.label
-                  ? { color: '#7C3AED' } // violet-600
-                  : {}),
+                padding: '4px 0',
+                borderBottom: active === item.label ? '2px solid #7C3AED' : '2px solid transparent',
               }}
               onMouseOver={e => (e.currentTarget.style.color = '#7C3AED')}
               onMouseOut={e => (e.currentTarget.style.color = active === item.label ? '#7C3AED' : '#4B5563')}
@@ -90,33 +91,26 @@ export const Navbar = ({ onCreateJob }: NavbarProps) => {
           radius="xl"
           fw={600}
           style={{
-            background: 'linear-gradient(to right, #8b5cf6, #7c3aed)', // from-violet-500 to-purple-600
+            background: 'linear-gradient(to right, #8b5cf6, #7c3aed)',
             color: 'white',
             fontWeight: 600,
-            padding: '0.5rem 1.75rem',
-            borderRadius: '9999px',
+            padding: '10px 32px',
+            borderRadius: 9999,
             boxShadow: '0 1px 4px rgba(124, 58, 237, 0.15)',
-            transition: 'all 0.2s',
             border: 'none',
+            fontSize: 17,
           }}
           styles={{
             root: {
               background: 'linear-gradient(to right, #8b5cf6, #7c3aed)',
               color: 'white',
               fontWeight: 600,
-              padding: '0.5rem 1.75rem',
-              borderRadius: '9999px',
+              padding: '10px 32px',
+              borderRadius: 9999,
               boxShadow: '0 1px 4px rgba(124, 58, 237, 0.15)',
               border: 'none',
+              fontSize: 17,
             },
-          }}
-          onMouseOver={e => {
-            (e.currentTarget as HTMLButtonElement).style.background =
-              'linear-gradient(to right, #7c3aed, #6d28d9)';
-          }}
-          onMouseOut={e => {
-            (e.currentTarget as HTMLButtonElement).style.background =
-              'linear-gradient(to right, #8b5cf6, #7c3aed)';
           }}
         >
           Create Jobs
