@@ -14,7 +14,7 @@ import {
   IconUser,
   IconBuilding,
   IconLayersOff,
-} from "@tabler/icons-react"; // Use icons that match the screenshot
+} from "@tabler/icons-react";
 import { Job } from "../types/job";
 
 interface JobCardProps {
@@ -52,26 +52,29 @@ export const JobCard = ({ job }: JobCardProps) => {
   return (
     <Card
       shadow="sm"
-      radius={24}
+      radius={16}
       withBorder
       style={{
         height: "100%",
-        position: "relative",
-        transition: "all 0.2s ease",
+        minHeight: 340,
+        maxWidth: 320,
         border: "none",
         boxShadow: "0 2px 12px 0 rgba(44, 62, 80, 0.08)",
         background: "#fff",
         padding: 0,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
       }}
     >
-      <Stack gap="md" h="100%" style={{ padding: 24 }}>
+      <Stack gap={0} h="100%" style={{ padding: 20 }}>
         {/* Header: logo left, time right */}
         <Group justify="space-between" align="center" mb={-8}>
           <Box
             style={{
-              width: 64,
-              height: 64,
-              borderRadius: 16,
+              width: 48,
+              height: 48,
+              borderRadius: 12,
               backgroundColor: "#f5f5f5",
               display: "flex",
               alignItems: "center",
@@ -83,8 +86,8 @@ export const JobCard = ({ job }: JobCardProps) => {
             <Image
               src={logoSrc}
               alt={job.company}
-              width={48}
-              height={48}
+              width={36}
+              height={36}
               fallbackSrc="/logos/default.png"
               style={{ objectFit: "contain" }}
             />
@@ -92,14 +95,14 @@ export const JobCard = ({ job }: JobCardProps) => {
           <Badge
             variant="light"
             color="blue"
-            size="lg"
+            size="md"
             radius="xl"
             style={{
               backgroundColor: "#b3daff",
               fontWeight: 500,
-              fontSize: 22,
-              borderRadius: 16,
-              padding: "8px 28px",
+              fontSize: 16,
+              borderRadius: 12,
+              padding: "4px 18px",
               minWidth: 0,
               height: "auto",
               lineHeight: 1,
@@ -117,11 +120,11 @@ export const JobCard = ({ job }: JobCardProps) => {
 
         {/* Job title */}
         <Text
-          size="lg"
+          size="xl"
           fw={700}
           style={{
-            marginTop: 8,
-            marginBottom: 8,
+            marginTop: 12,
+            marginBottom: 10,
             color: "#222",
             lineHeight: 1.2,
           }}
@@ -130,22 +133,22 @@ export const JobCard = ({ job }: JobCardProps) => {
         </Text>
 
         {/* Job details */}
-        <Group gap="lg" style={{ marginBottom: 8 }}>
+        <Group gap="md" style={{ marginBottom: 8 }}>
           <Group gap={4}>
-            <IconUser size={22} color="#888" stroke={1.7} />
-            <Text size="md" c="dimmed" style={{ fontWeight: 500 }}>
+            <IconUser size={18} color="#888" stroke={1.7} />
+            <Text size="sm" c="dimmed" style={{ fontWeight: 500 }}>
               {job.experience}
             </Text>
           </Group>
           <Group gap={4}>
-            <IconBuilding size={22} color="#888" stroke={1.7} />
-            <Text size="md" c="dimmed" style={{ fontWeight: 500 }}>
+            <IconBuilding size={18} color="#888" stroke={1.7} />
+            <Text size="sm" c="dimmed" style={{ fontWeight: 500 }}>
               {job.isremote ? "Remote" : "Onsite"}
             </Text>
           </Group>
           <Group gap={4}>
-            <IconLayersOff size={22} color="#888" stroke={1.7} />
-            <Text size="md" c="dimmed" style={{ fontWeight: 500 }}>
+            <IconLayersOff size={18} color="#888" stroke={1.7} />
+            <Text size="sm" c="dimmed" style={{ fontWeight: 500 }}>
               {job.salarydisplay}
             </Text>
           </Group>
@@ -158,9 +161,9 @@ export const JobCard = ({ job }: JobCardProps) => {
               <li
                 key={idx}
                 style={{
-                  fontSize: 17,
+                  fontSize: 14,
                   color: "#666",
-                  marginBottom: 6,
+                  marginBottom: 4,
                   listStyle: "disc",
                   fontWeight: 400,
                 }}
@@ -175,13 +178,13 @@ export const JobCard = ({ job }: JobCardProps) => {
         <Button
           fullWidth
           radius="xl"
-          size="lg"
+          size="md"
           styles={{
             root: {
               backgroundColor: "#1da1f2",
               fontWeight: 600,
-              fontSize: 22,
-              borderRadius: 16,
+              fontSize: 18,
+              borderRadius: 12,
               marginTop: 16,
               "&:hover": {
                 backgroundColor: "#1a8cd8",
