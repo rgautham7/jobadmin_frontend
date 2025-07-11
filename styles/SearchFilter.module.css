@@ -64,20 +64,20 @@
   font-weight: 500;
 }
 
+.salaryRangeSlider .mantine-RangeSlider-track {
+  background-color: #e0e0e0; 
+  height: 2px;
+}
+
+.salaryRangeSlider .mantine-RangeSlider-bar {
+  background-color: #000; 
+  height: 2px;
+}
+
 .salaryRangeSlider .mantine-RangeSlider-thumb {
   background-color: #fff;
   border: 7px solid #000;
   width: 20px;
   height: 20px;
   box-shadow: none;
-}
-
-.salaryRangeSlider .mantine-RangeSlider-track {
-  background-color: #000;
-  height: 2px;
-}
-
-.salaryRangeSlider .mantine-RangeSlider-bar {
-  background-color: #000;
-  height: 2px;
 }
