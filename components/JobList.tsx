@@ -3,6 +3,7 @@
 import { SimpleGrid, Container, Text, Center, Loader } from '@mantine/core';
 import { JobCard } from './JobCard';
 import { Job } from '../types/job';
+import styles from '../styles/JobList.module.css';
 
 interface JobListProps {
   jobs: Job[];
@@ -36,11 +37,12 @@ export const JobList = ({ jobs, loading, error }: JobListProps) => {
   }
 
   return (
-    <Container size="xl" py="xl">
+    <Container size="xl" className={styles.jobListContainer}>
       <SimpleGrid
         cols={{ base: 1, sm: 2, md: 3, lg: 4 }}
         spacing="lg"
         verticalSpacing="lg"
+        className={styles.jobListGrid}
       >
         {jobs.map((job) => (
           <JobCard key={job.id} job={job} />

@@ -1,0 +1,46 @@
+.searchFilterRoot {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 0 0 8px 0;
+  }
+  
+  .searchInput {
+    width: 300px;
+  }
+  
+  .searchInputField {
+    border: none;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 15px;
+    height: 44px;
+    padding-left: 40px;
+    box-shadow: 0 1px 4px 0 rgba(44, 62, 80, 0.04);
+  }
+  
+  .selectRoot {
+    width: 180px;
+  }
+  
+  .selectInput {
+    border: none;
+    background-color: white;
+    border-radius: 8px;
+    height: 44px;
+    padding-left: 40px;
+    font-size: 15px;
+    box-shadow: 0 1px 4px 0 rgba(44, 62, 80, 0.04);
+  }
+  
+  .selectJobTypeRoot {
+    width: 150px;
+  }
+  
+  .salaryBox {
+    width: 260px;
+  }
+  
+  .dividerVertical {
+    height: 40px;
+    margin: 0 16px;
+  }

@@ -1,0 +1,8 @@
+.jobListContainer {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  
+  .jobListGrid {
+    gap: 1.5rem;
+  }

@@ -16,6 +16,7 @@ import {
   IconLayersOff,
 } from "@tabler/icons-react";
 import { Job } from "../types/job";
+import styles from '../styles/JobCard.module.css';
 
 interface JobCardProps {
   job: Job;
@@ -54,42 +55,19 @@ export const JobCard = ({ job }: JobCardProps) => {
       shadow="sm"
       radius={16}
       withBorder
-      style={{
-        height: "100%",
-        minHeight: 340,
-        maxWidth: 320,
-        border: "none",
-        boxShadow: "0 2px 12px 0 rgba(44, 62, 80, 0.08)",
-        background: "#fff",
-        padding: 0,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-      }}
+      className={styles.jobCardRoot}
     >
-      <Stack gap={0} h="100%" style={{ padding: 20 }}>
+      <Stack className={styles.jobCardStack}>
         {/* Header: logo left, time right */}
         <Group justify="space-between" align="center" mb={-8}>
-          <Box
-            style={{
-              width: 48,
-              height: 48,
-              borderRadius: 12,
-              backgroundColor: "#f5f5f5",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              overflow: "hidden",
-              boxShadow: "0 2px 8px 0 rgba(44, 62, 80, 0.08)",
-            }}
-          >
+          <Box className={styles.jobCardLogoBox}>
             <Image
               src={logoSrc}
               alt={job.company}
               width={36}
               height={36}
               fallbackSrc="/logos/default.png"
-              style={{ objectFit: "contain" }}
+              className={styles.jobCardLogoImg}
             />
           </Box>
           <Badge
@@ -97,77 +75,44 @@ export const JobCard = ({ job }: JobCardProps) => {
             color="blue"
             size="md"
             radius="xl"
-            style={{
-              backgroundColor: "#b3daff",
-              fontWeight: 500,
-              fontSize: 16,
-              borderRadius: 12,
-              padding: "4px 18px",
-              minWidth: 0,
-              height: "auto",
-              lineHeight: 1,
-              color: "#000",
-              boxShadow: "none",
-              letterSpacing: 0,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
+            className={styles.jobCardBadge}
           >
             {formatTimeAgo(job.postedat)}
           </Badge>
         </Group>
 
         {/* Job title */}
-        <Text
-          size="xl"
-          fw={700}
-          style={{
-            marginTop: 12,
-            marginBottom: 10,
-            color: "#222",
-            lineHeight: 1.2,
-          }}
-        >
+        <Text className={styles.jobCardTitle}>
           {job.title}
         </Text>
 
         {/* Job details */}
-        <Group gap="md" style={{ marginBottom: 8 }}>
-          <Group gap={4}>
-            <IconUser size={18} color="#888" stroke={1.7} />
-            <Text size="sm" c="dimmed" style={{ fontWeight: 500 }}>
+        <Group className={styles.jobCardDetails}>
+          <Group className={styles.jobCardDetailGroup}>
+            <IconUser size={18} color="#888" />
+            <Text className={styles.jobCardDetailText}>
               {job.experience}
             </Text>
           </Group>
-          <Group gap={4}>
-            <IconBuilding size={18} color="#888" stroke={1.7} />
-            <Text size="sm" c="dimmed" style={{ fontWeight: 500 }}>
+          <Group className={styles.jobCardDetailGroup}>
+            <IconBuilding size={18} color="#888" />
+            <Text className={styles.jobCardDetailText}>
               {job.isremote ? "Remote" : "Onsite"}
             </Text>
           </Group>
-          <Group gap={4}>
-            <IconLayersOff size={18} color="#888" stroke={1.7} />
-            <Text size="sm" c="dimmed" style={{ fontWeight: 500 }}>
+          <Group className={styles.jobCardDetailGroup}>
+            <IconLayersOff size={18} color="#888" />
+            <Text className={styles.jobCardDetailText}>
               {job.salarydisplay}
             </Text>
           </Group>
         </Group>
 
         {/* Description */}
-        <Box style={{ flex: 1 }}>
-          <ul style={{ paddingLeft: 18, margin: 0 }}>
+        <Box className={styles.jobCardDescBox}>
+          <ul className={styles.jobCardDescList}>
             {job.description.split("\n").map((line, idx) => (
-              <li
-                key={idx}
-                style={{
-                  fontSize: 14,
-                  color: "#666",
-                  marginBottom: 4,
-                  listStyle: "disc",
-                  fontWeight: 400,
-                }}
-              >
+              <li key={idx} className={styles.jobCardDescItem}>
                 {line}
               </li>
             ))}
@@ -179,18 +124,7 @@ export const JobCard = ({ job }: JobCardProps) => {
           fullWidth
           radius="xl"
           size="md"
-          styles={{
-            root: {
-              backgroundColor: "#1da1f2",
-              fontWeight: 600,
-              fontSize: 18,
-              borderRadius: 12,
-              marginTop: 16,
-              "&:hover": {
-                backgroundColor: "#1a8cd8",
-              },
-            },
-          }}
+          className={styles.jobCardButton}
         >
           Apply Now
         </Button>
