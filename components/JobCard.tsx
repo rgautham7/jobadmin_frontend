@@ -13,7 +13,7 @@ import {
 import {
   IconUser,
   IconBuilding,
-  IconLayers,
+  IconLayersOff,
 } from "@tabler/icons-react"; // Use icons that match the screenshot
 import { Job } from "../types/job";
 
@@ -117,7 +117,7 @@ export const JobCard = ({ job }: JobCardProps) => {
 
         {/* Job title */}
         <Text
-          size={28}
+          size="lg"
           fw={700}
           style={{
             marginTop: 8,
@@ -144,7 +144,7 @@ export const JobCard = ({ job }: JobCardProps) => {
             </Text>
           </Group>
           <Group gap={4}>
-            <IconLayers size={22} color="#888" stroke={1.7} />
+            <IconLayersOff size={22} color="#888" stroke={1.7} />
             <Text size="md" c="dimmed" style={{ fontWeight: 500 }}>
               {job.salarydisplay}
             </Text>
